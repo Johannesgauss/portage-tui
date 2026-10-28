@@ -1,0 +1,111 @@
+.TH PORTAGE-TUI 1 "October 2026" "portage-tui 0.1.0" "Gentoo Portage Utilities"
+.SH NAME
+portage-tui \- interactive terminal user interface for Gentoo Portage package and USE flag management
+.SH SYNOPSIS
+.B portage-tui
+[\fIOPTIONS\fR] [\fIROOT_PATH\fR]
+.SH DESCRIPTION
+.B portage-tui
+is a fast, keyboard-driven terminal user interface (TUI) written in pure Rust for inspecting and managing Gentoo Linux packages, USE flags, and system updates.
+.PP
+It displays the \fB@world\fR package dependency tree with collapsible nodes, parses plain-English USE flag descriptions from repository metadata, tracks flag origins (\fBmake.conf\fR, \fBpackage.use\fR, or profile defaults), manages package masks and testing keywords, allows pre-flight USE flag selection before package installation, and provides safe interactive package uninstallation via \fBemerge --depclean\fR.
+.SH OPTIONS
+.TP
+.BR \-h ", " \-\-help
+Print command-line help and keybindings summary.
+.TP
+.BR \-V ", " \-\-version
+Print version information.
+.TP
+.I ROOT_PATH
+Optional path to the Portage root directory (defaults to \fB/\fR on Gentoo hosts with \fB/var/db/pkg\fR, or a mock environment for testing).
+.SH KEYBINDINGS
+.TP
+.BR Tab ", " BackTab
+Switch active pane between the package tree and the USE flags list.
+.TP
+.BR Up " / " k ", " Down " / " j
+Move cursor selection up / down.
+.TP
+.BR PageUp ", " PageDown
+Scroll list by one page.
+.TP
+.BR Home " / " g ", " End " / " G
+Jump to the top or bottom of the active list.
+.TP
+.BR Enter " (in Tree pane)"
+Expand or collapse dependencies for the selected package.
+.TP
+.BR l " / " h " (in Tree pane)"
+Expand dependencies or collapse / jump to parent package.
+.TP
+.BR Space " (in USE Flags pane)"
+Toggle the selected USE flag (marks flag as staged).
+.TP
+.BR Space " (in Tree pane)"
+Switch focus to the USE flags pane.
+.TP
+.B [m]
+Toggle package mask in \fB/etc/portage/package.mask/zz-portage-manager\fR.
+.TP
+.B [t]
+Toggle \fB~testing\fR arch keyword in \fB/etc/portage/package.accept_keywords/zz-portage-manager\fR.
+.TP
+.B [s]
+Save all staged changes to \fB/etc/portage/\fR.
+.TP
+.B [a]
+Open the package installation modal. Queries the repository, checks mask status, and opens the pre-install USE flag selection modal before calling emerge.
+.TP
+.BR [d] " / " [x]
+Open the package uninstallation modal. Executes \fBemerge --deselect\fR followed by \fBemerge --ask --depclean\fR.
+.TP
+.B [u]
+Trigger full system synchronization and update: runs \fBsudo emaint --auto sync\fR followed by \fBsudo emerge -avuDN @world\fR.
+.TP
+.B /
+Start live search filter on packages or USE flags.
+.TP
+.B Esc
+Clear search filter or dismiss any open modal.
+.TP
+.B [q]
+Quit \fBportage-tui\fR.
+.SH FILES
+.TP
+.I /etc/portage/package.use/zz-portage-manager
+Managed per-package USE flag configuration overrides.
+.TP
+.I /etc/portage/package.mask/zz-portage-manager
+Managed user package masks.
+.TP
+.I /etc/portage/package.unmask/zz-portage-manager
+Managed package unmasks.
+.TP
+.I /etc/portage/package.accept_keywords/zz-portage-manager
+Managed architecture testing keywords.
+.TP
+.I /var/lib/portage/world
+List of explicitly installed packages in the @world set.
+.TP
+.I /var/db/pkg/
+Installed package database (VDB).
+.SH PERMISSIONS
+To save configuration changes without running the entire TUI as root, add your user to the \fBportage\fR group and grant group write permissions to \fB/etc/portage\fR:
+.PP
+.nf
+.RS
+sudo gpasswd -a $USER portage
+sudo chgrp -R portage /etc/portage
+sudo chmod -R g+w /etc/portage
+sudo find /etc/portage -type d -exec chmod g+s {} +
+newgrp portage
+.RE
+.fi
+.SH SEE ALSO
+.BR emerge (1),
+.BR portage (5),
+.BR make.conf (5),
+.BR emaint (1)
+.SH AUTHORS
+Written by Johannes Gauss and contributors.
