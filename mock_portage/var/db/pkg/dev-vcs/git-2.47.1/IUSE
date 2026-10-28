@@ -1,0 +1,1 @@
++curl cgi doc gpg keyring +iconv mediawiki +nls +pcre perl +safe-directory selinux subversion test tk webdav xinetd

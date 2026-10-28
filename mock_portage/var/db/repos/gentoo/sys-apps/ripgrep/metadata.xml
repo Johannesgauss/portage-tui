@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <use>
+    <flag name="pcre2">Add support for PCRE2 regular expressions via <pkg>dev-libs/libpcre2</pkg></flag>
+  </use>
+</pkgmetadata>

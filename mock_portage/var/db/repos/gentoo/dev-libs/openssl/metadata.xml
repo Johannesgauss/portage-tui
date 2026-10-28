@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <use>
+    <flag name="asm">Enable hand-written assembly optimizations</flag>
+    <flag name="sslv3">Support for the old/insecure SSLv3 protocol</flag>
+  </use>
+</pkgmetadata>

@@ -1,0 +1,2 @@
+net-misc/curl ssl http2
+app-editors/neovim LUA_SINGLE_TARGET: luajit

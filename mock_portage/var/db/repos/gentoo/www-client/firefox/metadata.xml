@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <use>
+    <flag name="clang">Use Clang compiler instead of GCC</flag>
+    <flag name="eme-free">Disable EME (DRM plugin) capability at build time</flag>
+    <flag name="geckodriver">Install geckodriver for WebDriver automation</flag>
+    <flag name="hardened">Use hardened toolchain flags</flag>
+    <flag name="hwaccel">Force-enable hardware-accelerated rendering</flag>
+    <flag name="jumbo-build">Increase build speed with unified (jumbo) builds</flag>
+    <flag name="openh264">Use <pkg>media-libs/openh264</pkg> for H264 support</flag>
+    <flag name="screencast">Enable screencast support on Wayland via PipeWire</flag>
+    <flag name="sndio">Enable sndio audio backend</flag>
+    <flag name="system-av1">Use the system-wide AV1 libraries</flag>
+    <flag name="system-harfbuzz">Use the system-wide harfbuzz</flag>
+    <flag name="system-icu">Use the system-wide ICU</flag>
+    <flag name="system-jpeg">Use the system-wide libjpeg-turbo</flag>
+    <flag name="system-libevent">Use the system-wide libevent</flag>
+    <flag name="system-libvpx">Use the system-wide libvpx</flag>
+    <flag name="system-png">Use the system-wide libpng with APNG support</flag>
+    <flag name="system-webp">Use the system-wide libwebp</flag>
+    <flag name="telemetry">Send technical and interaction data to Mozilla</flag>
+    <flag name="wifi">Enable network location via nearby WiFi access points</flag>
+  </use>
+</pkgmetadata>

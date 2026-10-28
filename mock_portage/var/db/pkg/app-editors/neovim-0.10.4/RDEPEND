@@ -1,0 +1,1 @@
+dev-libs/libuv:0/1= >=dev-libs/msgpack-c-6.0.0 dev-lua/lua-lpeg[lua_single_target_luajit(-)] dev-lang/luajit:2

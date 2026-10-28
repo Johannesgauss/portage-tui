@@ -1,0 +1,14 @@
+app-admin/sudo
+app-editors/neovim
+app-misc/fastfetch
+app-misc/tmux
+app-shells/zsh
+app-text/tree
+dev-lang/rust-bin
+dev-vcs/git
+media-video/mpv
+net-misc/curl
+net-misc/openssh
+sys-apps/ripgrep
+sys-process/htop
+www-client/firefox:rapid

@@ -1,0 +1,18 @@
+# Global USE flags
+X - Add support for X11
+debug - Enable extra debug codepaths, like asserts and extra output
+doc - Add extra documentation (API, Javadoc, etc)
+http2 - Enable support for the HTTP/2 protocol
+ldap - Add LDAP support (Lightweight Directory Access Protocol)
+lto - Enable Link-Time Optimization (LTO) to optimize the build
+nls - Add Native Language Support (using gettext)
+pulseaudio - Add support for PulseAudio sound server
+ssh - Enable SSH support
+ssl - Add support for SSL/TLS connections (Secure Socket Layer / Transport Layer Security)
+static-libs - Build static versions of dynamic libraries as well
+test - Enable dependencies and/or preparations necessary to run tests
+wayland - Enable dev-libs/wayland backend
+zstd - Enable support for ZSTD compression
+pgo - Optimize the build using Profile Guided Optimization (PGO)
+dbus - Enable dbus support for anything that needs it
+vaapi - Enable Video Acceleration API for hardware decoding
