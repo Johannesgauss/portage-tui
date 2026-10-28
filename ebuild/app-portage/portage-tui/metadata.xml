@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>user@localhost</email>
+		<name>Local Maintainer</name>
+	</maintainer>
+	<longdescription lang="en">
+		portage-tui is a fast, interactive terminal user interface (TUI) for managing
+		Gentoo Portage. It allows visualizing the @world dependency tree, toggling
+		USE flags with plain-English descriptions, managing package masks and keywords,
+		searching packages, unmasking dependencies, and triggering interactive emerges and updates.
+	</longdescription>
+	<upstream>
+		<remote-id type="github">Johannesgauss/portage-tui</remote-id>
+	</upstream>
+</pkgmetadata>
